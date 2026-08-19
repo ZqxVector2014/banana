@@ -1,0 +1,19 @@
+backend:
+  name: ZqxVector2014
+  repo: banana
+  branch: main
+  base_url: https://banana.zqxcc.dpdns.org
+  auth_endpoint: /api/auth
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: posts
+    label: 博客文章
+    folder: "docs/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime"}
+      - {label: "标签", name: "tags", widget: "list"}
+      - {label: "正文", name: "body", widget: "markdown"}
